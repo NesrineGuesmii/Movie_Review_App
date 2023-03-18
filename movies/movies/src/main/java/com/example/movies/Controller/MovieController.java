@@ -17,13 +17,11 @@ import java.util.Optional;
 @RequestMapping("/api/v1/movies")
 @AllArgsConstructor
 public class MovieController {
-
-
     private final MovieService service;
 
     @GetMapping
-    public ResponseEntity<List<Movie>> getMovies() {
-        return new ResponseEntity<List<Movie>>(service.findAllMovies(), HttpStatus.OK);
+   public String allMovies(){
+        return "all movies";
     }
 
     @GetMapping("/{imdbId}")
